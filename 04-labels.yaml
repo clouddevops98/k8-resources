@@ -4,7 +4,7 @@ metadata:
   name: frontend
   labels:
     project: roboshop
-    componemt: frontend
+    component: frontend
     environment: dev
     version: v1
 spec:
