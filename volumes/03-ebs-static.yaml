@@ -8,7 +8,7 @@ spec:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain # retain means don't delete data, Recycle means delete data don't delete disk. Delete means delete the disk
   capacity:
-    storage: 25Gi
+    storage: 15Gi
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
@@ -25,7 +25,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 25Gi
+      storage: 15Gi
 ---
 apiVersion: v1
 kind: Pod
@@ -41,7 +41,7 @@ spec:
     - name: nginx-html
       mountPath: /usr/share/nginx/html
   nodeSelector:
-    topology.kubernetes.io/zone: us-east-1a
+    topology.kubernetes.io/zone: us-east-1c
   volumes:
   - name: nginx-html
     persistentVolumeClaim:
